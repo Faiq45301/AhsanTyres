@@ -1,0 +1,111 @@
+/* Main Styles */
+.customer-payment-container {
+  width: 100%;
+  max-width: 800px; /* Increased container size */
+  margin: 0 auto;
+  padding: 30px; /* Increased padding for more space */
+  background-color: #f5f5f5;
+  border-radius: 12px; /* Slightly larger border-radius for a more rounded appearance */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.customer-payment-title {
+  font-size: 28px; /* Increased font size for better visibility */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px; /* Increased margin for spacing */
+}
+
+.customer-payment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-payment-field {
+  margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+.customer-payment-field label {
+  display: block;
+  margin-bottom: 8px; /* Adjusted margin for better spacing */
+  font-size: 18px; /* Increased font size for better readability */
+  font-weight: bold;
+}
+
+.customer-payment-field select,
+.customer-payment-field input {
+  width: 100%;
+  max-width: 500px; /* Reduced field width */
+  padding: 12px; /* Increased padding for better touch interaction */
+  font-size: 16px;
+  border-radius: 20px; /* Fully rounded fields */
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.customer-payment-button {
+  padding: 12px 24px; /* Increased padding for better button size */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px; /* Fully rounded button */
+  font-size: 18px; /* Increased font size for better readability */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.customer-payment-button:hover {
+  background-color: #0056b3;
+}
+
+.customer-payment-id {
+  text-align: center;
+  margin-top: 25px; /* Increased margin for spacing */
+  font-size: 18px; /* Increased font size for visibility */
+  color: green;
+  font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .customer-payment-container {
+    padding: 15px;
+    max-width: 100%;
+    box-shadow: none; /* Remove box-shadow for a cleaner look on small screens */
+    margin-top: 30%;
+    margin-left: -20%;
+  }
+
+  .customer-payment-title {
+    font-size: 22px; /* Adjusted font size for smaller screens */
+    margin-bottom: 15px; /* Adjusted margin for spacing */
+  }
+
+  .customer-payment-field {
+    margin-bottom: 10px; /* Adjusted margin for better spacing on small screens */
+  }
+
+  .customer-payment-field label {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    margin-bottom: 4px; /* Adjusted margin for better spacing */
+  }
+
+  .customer-payment-field select,
+  .customer-payment-field input {
+    max-width: 100%; /* Full width for smaller screens */
+    padding: 8px; /* Reduced padding for smaller screens */
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    border-radius: 12px; /* Slightly rounded fields for smaller screens */
+  }
+
+  .customer-payment-button {
+    padding: 10px 20px; /* Reduced padding for smaller screens */
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    border-radius: 12px; /* Slightly rounded button for smaller screens */
+  }
+
+  .customer-payment-id {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    margin-top: 15px; /* Adjusted margin for spacing */
+  }
+}

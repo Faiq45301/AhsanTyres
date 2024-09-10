@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.customer-form-container-add-customer {
+  background-color: white;
+  width: 200%; /* Adjusted to fit container within viewport */
+  max-width: 950px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering items */
+  margin-left: -20%;
+}
+
+.customer-form-container-add-customer h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Input Groups with Icons Inside */
+.input-group-add-customer {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.icon-add-customer {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-group-add-customer input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-group-add-customer input:focus {
+  border-color: #4a90e2;
+}
+
+/* Submit Button */
+.add-button-add-customer {
+  width: 100%;
+  max-width: 200px;
+  padding: 15px;
+  background-color: #06631a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+  margin-left: 20%;
+}
+
+.add-button-add-customer:hover {
+  background-color: #357abd;
+}
+
+/* SweetAlert2 Popup Customization */
+.swal-add-customer-popup {
+  border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .customer-form-container-add-customer {
+    padding: 5px;
+    width: 110%;
+    margin: 0;
+    margin-top: 40%;
+    justify-content: left;
+    align-items: center;
+    box-shadow: none;
+    margin-left: -20%;
+  }
+
+  .customer-form-container-add-customer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .input-group-add-customer {
+    margin-bottom: 30px;
+    width: 80%;
+  }
+
+  .input-group-add-customer input {
+    padding: 12px 15px 12px 40px;
+  }
+
+  .add-button-add-customer {
+    width: 80%;
+    font-size: 1rem;
+    padding: 10%;
+    margin-left: 10%;
+    
+  }
+}

@@ -1,0 +1,134 @@
+.update-product-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-product-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .update-product-dropdown {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .update-product-dropdown-select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .update-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .update-product-form-group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  
+  .update-product-icon {
+    margin-right: 10px;
+    color: #666;
+  }
+  
+  .update-product-rounded-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .update-product-button {
+    background-color: #06603a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  
+  .update-product-button:hover {
+    background-color: #054028;
+  }
+  
+  .update-product-success-animation {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .update-product-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #66bb6a;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .update-product-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 5px solid white;
+    border-radius: 50%;
+    border-top: none;
+    border-right: none;
+    transform: rotate(45deg);
+    animation: checkmark 0.5s ease-in-out;
+  }
+  
+  @keyframes checkmark {
+    from {
+      transform: scale(0) rotate(45deg);
+    }
+    to {
+      transform: scale(1) rotate(45deg);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .update-product-container {
+      padding: 10px;
+      margin-top: 30%;
+      margin-left: -10%;
+     
+    }
+  
+    .update-product-rounded-input {
+      padding: 8px;
+    }
+  
+    .update-product-button {
+      font-size: 14px;
+      padding: 10px;
+      margin-left: 80px;
+    }
+  }
+  

@@ -1,0 +1,125 @@
+.view-product-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  max-width: 800px; /* Keeps the width reasonable on larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds visibility with shadow */
+  border-radius: 8px;
+  margin-top: 20%;
+  margin-left: -10%;
+}
+
+.view-product-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.view-product-dropdown-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.view-product-dropdown {
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.view-product-product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-product-input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%; /* Ensure inputs take up full width */
+}
+
+.view-product-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #333;
+  min-width: 30px; /* This will ensure icons have a consistent width */
+  text-align: center; /* Centers the icons vertically */
+}
+
+.view-product-rounded-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* Full width for better responsiveness */
+}
+
+.view-product-delete-button {
+  background-color: #d33;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-product-delete-button:hover {
+  background-color: #c12;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .view-product-container {
+    padding: 10px;
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .view-product-title {
+    font-size: 20px; /* Reduce font size on mobile */
+  }
+
+  .view-product-dropdown {
+    width: 100%; /* Full width for the dropdown */
+  }
+
+  .view-product-rounded-input {
+    width: 100%; /* Full-width inputs for mobile */
+  }
+
+  .view-product-input-group {
+    flex-direction: row; /* Keep icons and inputs in a row on mobile */
+    align-items: center; /* Ensures icons and inputs are vertically aligned */
+    justify-content: flex-start; /* Align input fields and icons to the left */
+  }
+  
+  .view-product-icon {
+    margin-right: 10px;
+    min-width: 30px; /* Ensure consistent width for icons */
+  }
+
+  .view-product-delete-button {
+    width: 100%; /* Full-width button for mobile */
+    padding: 12px; /* Slightly larger padding for easier tapping */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .view-product-title {
+    font-size: 18px;
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
+  }
+
+  .view-product-rounded-input {
+    padding: 8px; /* Slightly reduce padding for better mobile appearance */
+  }
+
+  .view-product-icon {
+    font-size: 18px; /* Reduce icon size for small screens */
+  }
+
+  .view-product-delete-button {
+    padding: 10px;
+    font-size: 14px; /* Reduce font size for small screens */
+  }
+}

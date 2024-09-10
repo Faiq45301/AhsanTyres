@@ -1,0 +1,53 @@
+/* General Dashboard Styles */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Card Styles */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-icon {
+    font-size: 2rem;
+    color: #06603a;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .card p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        flex: 1;
+        max-width: 100%; /* Make cards full width of the container */
+        min-width: 100%; /* Ensure cards take up full width */
+        margin-top: 30%;
+        margin-left: -20%;
+        
+    }
+}
+  

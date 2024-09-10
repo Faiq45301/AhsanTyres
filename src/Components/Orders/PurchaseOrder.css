@@ -1,0 +1,177 @@
+/* PurchaseOrder.css */
+
+/* Container for the entire purchase order section */
+.purchase-order-container {
+  max-width: 500px; /* Further reduced width */
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #06603a;
+  margin-bottom: 15px;
+}
+
+/* Vendor dropdown section */
+.vendor-section {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.vendor-section select {
+  width: 70%; /* Further reduced width */
+  padding: 6px; /* Reduced padding */
+  border: 2px solid #06603a;
+  border-radius: 30px;
+  font-size: 14px; /* Smaller font size */
+}
+
+.vendor-section p {
+  margin-top: 8px;
+  color: #333;
+}
+
+/* Product toggle button */
+.product-toggle {
+  text-align: center;
+  margin: 15px 0;
+  
+}
+
+.product-toggle button {
+  padding: 8px 15px; /* Smaller padding */
+  background-color: #06603a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: 50%; /* Reduced width */
+}
+
+.product-toggle button:hover {
+  background-color: #044d2b;
+}
+
+/* Form for new product */
+.product-form input {
+  width: 90%; /* Reduced width */
+  padding: 6px; /* Smaller padding */
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.product-form button {
+  width: 40%; /* Reduced width */
+  padding: 8px;
+  background-color: #06603a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20%;
+}
+
+.product-form button:hover {
+  background-color: #044d2b;
+}
+
+/* Existing product dropdown section */
+.existing-product-section select,
+.existing-product-section input {
+  width: 70%; /* Reduced width */
+  padding: 6px; /* Smaller padding */
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 14px;
+  margin-left: 10%;
+}
+
+.existing-product-section button {
+  width: 50%; /* Reduced width */
+  padding: 8px;
+  background-color: #06603a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20%;
+}
+
+.existing-product-section button:hover {
+  background-color: #044d2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .purchase-order-container {
+      max-width: 100%;
+      padding: 10px;
+  }
+
+  h1, h2 {
+      font-size: 18px;
+  }
+
+  .vendor-section select, 
+  .existing-product-section select,
+  .existing-product-section input,
+  .product-form input {
+      width: 60%; /* Reduced width */
+      padding: 5px;
+  }
+
+  .vendor-section p {
+      font-size: 12px;
+  }
+
+  .product-toggle button,
+  .product-form button,
+  .existing-product-section button {
+      width: 60%; /* Reduced width */
+      padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .purchase-order-container {
+      padding: 5px;
+      margin-top: 50px;
+      margin-left: -10%;
+  }
+
+  h1, h2 {
+      font-size: 20px;
+  }
+
+  .vendor-section select, 
+  .existing-product-section select,
+  .existing-product-section input,
+  .product-form input {
+      font-size: 12px;
+      padding: 4px;
+      width: 55%; 
+      
+  }
+
+  .product-toggle button,
+  .product-form button,
+  .existing-product-section button {
+      padding: 6px;
+      font-size: 12px;
+      width: 55%; /* Further reduced width */
+  }
+}
