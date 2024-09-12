@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase'; // Adjust based on your Firebase configuration
 import { ref, onValue, remove } from 'firebase/database';
 import { FaUser, FaPhone, FaCar, FaMoneyBill, FaTrashAlt } from 'react-icons/fa';
+import swal from 'sweetalert'; // Import SweetAlert
 import './ViewCustomer.css';
 
 export default function ViewCustomer() {
@@ -27,19 +28,31 @@ export default function ViewCustomer() {
     setSelectedCustomer(customer);
   };
 
-  // Handle customer deletion
+  // Handle customer deletion with SweetAlert confirmation
   const handleDeleteCustomer = () => {
     if (selectedCustomer) {
-      const confirmDelete = window.confirm("Are you sure you want to delete this customer?");
-      if (confirmDelete) {
-        const customerRef = ref(db, `Customers/${selectedCustomer.id}`);
-        remove(customerRef)
-          .then(() => {
-            alert('Customer deleted successfully');
-            setSelectedCustomer(null); // Clear the form after deletion
-          })
-          .catch(err => console.error('Error deleting customer:', err));
-      }
+      swal({
+        title: "Are you sure?",
+        text: "You will not be able to revert this action!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          const customerRef = ref(db, `Customers/${selectedCustomer.id}`);
+          remove(customerRef)
+            .then(() => {
+              swal("Deleted!", "Customer has been deleted successfully.", "success");
+              setSelectedCustomer(null); // Clear the form after deletion
+            })
+            .catch(err => {
+              swal("Error!", "Failed to delete the customer.", "error");
+              console.error('Error deleting customer:', err);
+            });
+        } else {
+          swal("Cancelled", "Customer deletion was cancelled", "info");
+        }
+      });
     }
   };
 

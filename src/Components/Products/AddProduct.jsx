@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ref, set } from 'firebase/database';
 import { db } from '../../firebase'; // Ensure this is correctly set up
 import { FaBoxOpen, FaRulerCombined, FaAlignLeft, FaDollarSign, FaSortAmountUp } from 'react-icons/fa';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 import './AddProduct.css';
 
 const AddProduct = () => {
@@ -12,7 +13,6 @@ const AddProduct = () => {
     price: '',
     quantity: ''
   });
-  const [success, setSuccess] = useState(false);
 
   // Handle input change
   const handleChange = (e) => {
@@ -35,8 +35,20 @@ const AddProduct = () => {
       await set(ref(db, `Products/${productId}`), {
         ...product,
       });
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000); // Reset animation after 3 seconds
+      
+      // Show success SweetAlert animation
+      Swal.fire({
+        title: 'Success!',
+        text: 'Product added successfully!',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 2000, // Auto-close after 2 seconds
+        customClass: {
+          popup: 'swal-popup-animation' // Optional custom animation classes if needed
+        }
+      });
+
+      // Clear form fields after submission
       setProduct({
         item: '',
         size: '',
@@ -44,8 +56,16 @@ const AddProduct = () => {
         price: '',
         quantity: ''
       });
+      
     } catch (error) {
       console.error('Error adding product: ', error);
+      
+      // Show error SweetAlert in case of failure
+      Swal.fire({
+        title: 'Error!',
+        text: 'Failed to add product. Try again later.',
+        icon: 'error',
+      });
     }
   };
 
@@ -110,8 +130,6 @@ const AddProduct = () => {
         </div>
         <button type="submit" className="add-button-add-product">Add Product</button>
       </form>
-
-      {success && <div className="success-animation-add-product">Product Added Successfully!</div>}
     </div>
   );
 };

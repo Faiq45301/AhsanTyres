@@ -60,6 +60,7 @@ body {
     color: #cae0d6;
     font-size: 24px;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .menu-item {
@@ -143,6 +144,7 @@ body {
 @media (max-width: 768px) {
     .hamburger-container {
         display: block; /* Display hamburger icon on mobile */
+        
     }
 
     .sidebar-container {
@@ -169,5 +171,15 @@ body {
 
     .submenu {
         padding-left: 20px;
+    }
+}
+.close-icon {
+    display: none;
+}
+
+/* Show the close icon only for smaller screens */
+@media (max-width: 1024px) {
+    .close-icon {
+        display: block;
     }
 }

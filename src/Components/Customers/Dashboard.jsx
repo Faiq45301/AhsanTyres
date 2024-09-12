@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, get } from 'firebase/database';
+import { ref, get } from 'firebase/database';
 import './Dashboard.css';
 import { FaUsers, FaMoneyBillWave, FaCashRegister, FaHandHoldingUsd } from 'react-icons/fa';
-
+import {db} from '../../firebase';
 // Utility function to get current date in YYYY-MM-DD format
 const getCurrentDate = () => {
   const today = new Date();
@@ -20,16 +20,18 @@ export default function Dashboard() {
   const [cashOnHand, setCashOnHand] = useState(0);
   const [error, setError] = useState(null);
 
-  const db = getDatabase();
   const todayDate = getCurrentDate(); // Get the current date in YYYY-MM-DD format
-
-  useEffect(() => {
-    // Fetching data
+  function alpha(){
     fetchCustomerData();
     fetchVendorData();
     fetchVendorPayments();
     calculateCustomerRecovery();
-    // Removed new card functions
+  }
+  useEffect(() => {
+    // Fetching data
+    
+    alpha()
+    // eslint-disable-next-line
   }, []);
 
   // Function to fetch customer data and calculate total receivables
@@ -125,6 +127,7 @@ export default function Dashboard() {
   // Calculate cash on hand (customer recovery - paid to suppliers)
   useEffect(() => {
     setCashOnHand(customerRecovery - paidToSuppliers);
+    // eslint-disable-next-line
   }, [customerRecovery, paidToSuppliers]);
 
   return (

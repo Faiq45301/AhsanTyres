@@ -92,7 +92,8 @@ body {
     justify-content: left;
     align-items: center;
     box-shadow: none;
-    margin-left: -20%;
+    margin-left: -10%;
+
   }
 
   .customer-form-container-add-customer h2 {

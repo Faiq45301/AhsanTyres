@@ -16,23 +16,27 @@ import UpdateVendor from './Components/Supplier/UpdateVendor';
 import UpdateProduct from './Components/Products/UpdateProduct';
 import Dashboard from './Components/Customers/Dashboard';
 
-
 import {
   FaUser, FaPlus, FaEye, FaEdit, FaBox, FaStore,
   FaShoppingCart, FaMoneyCheckAlt, FaHistory, FaBars, FaTimes
 } from 'react-icons/fa';
+
 function App() {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const [selectedContent, setSelectedContent] = useState(null);
+  const [selectedContent, setSelectedContent] = useState('Dashboard');
 
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
   };
 
-  const handleMenuItemClick = (submenuItem) => 
-  {
+  const handleMenuItemClick = (submenuItem) => {
     setSelectedContent(submenuItem.label); // Set the selected content
     setSidebarVisible(false); // Close the sidebar after selecting an item (optional)
+  };
+
+  const handleDashboardClick = () => {
+    setSelectedContent('Dashboard');
+    setSidebarVisible(false); // Close the sidebar for mobile
   };
 
   return (
@@ -47,7 +51,7 @@ function App() {
           <FaTimes />
         </button>
         <aside className="sidebar">
-          <h4 className="sidebar-header">Dashboard</h4>
+          <h4 className="sidebar-header" onClick={handleDashboardClick} style={{ cursor: 'pointer' }} >Dashboard</h4>
           <nav>
             {menuItems.map(item => (
               <div className="menu-item" key={item.title}>
@@ -74,7 +78,6 @@ function App() {
         </aside>
       </div>
       <main className="content">
-        {/* Conditionally render content based on the selected submenu item */}
         {renderContent(selectedContent)}
       </main>
     </div>
@@ -85,35 +88,35 @@ function App() {
 const renderContent = (content) => {
   switch (content) {
     case 'Add Customer':
-      return <div> <AddCustomer/></div>;
+      return <div> <AddCustomer /></div>;
     case 'View Customer':
-      return <div><ViewCustomer/></div>;
+      return <div><ViewCustomer /></div>;
     case 'Update Customer':
-      return <div><UpdateCustomer/></div>;
+      return <div><UpdateCustomer /></div>;
     case 'Add Vendor':
-      return <div><AddVendor/></div>;
+      return <div><AddVendor /></div>;
     case 'View Vendor':
-      return <div><ViewVendor/></div>;
+      return <div><ViewVendor /></div>;
     case 'Update Vendor':
-      return <div><UpdateVendor/></div>;
+      return <div><UpdateVendor /></div>;
     case 'Add Product':
-      return <div><AddProduct/></div>;
+      return <div><AddProduct /></div>;
     case 'View Product':
-      return <div><ViewProduct/></div>;
+      return <div><ViewProduct /></div>;
     case 'Update Product':
-      return <div><UpdateProduct/></div>;
+      return <div><UpdateProduct /></div>;
     case 'Purchase Order':
-      return <div><PurchaseOrder/></div>;
+      return <div><PurchaseOrder /></div>;
     case 'Sale Order':
-      return <div><SaleOrder/></div>;
+      return <div><SaleOrder /></div>;
     case 'Customer Payment':
-      return <div><CustomerPayment/></div>;
+      return <div><CustomerPayment /></div>;
     case 'Supplier Payment':
-      return <div><VendorPayment/></div>;
+      return <div><VendorPayment /></div>;
     case 'Transaction History':
-      return <div><THistory/></div>;
+      return <div><THistory /></div>;
     default:
-      return <Dashboard/>
+      return <Dashboard />; // Default to the Dashboard component
   }
 };
 

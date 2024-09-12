@@ -1,5 +1,6 @@
 .view-vendor-container {
   max-width: 600px;
+  width:400px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f4f4f9;
@@ -102,6 +103,8 @@
     padding: 10px;
     margin-top: 30%;
     margin-left: -10%;
+    max-width: 500%;
+    width:100%;
   }
 
   .rounded-input {

@@ -21,8 +21,6 @@ export default function ViewVendor() {
     });
   }, []);
 
-  
-
   // Handle vendor selection
   const handleSelectVendor = (e) => {
     const selectedId = e.target.value;
@@ -41,7 +39,10 @@ export default function ViewVendor() {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!',
-        willClose: () => {
+        cancelButtonText: 'Cancel',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Delete the vendor if confirmed
           const vendorRef = ref(db, `Vendors/${selectedVendor.id}`);
           remove(vendorRef)
             .then(() => {
@@ -57,8 +58,6 @@ export default function ViewVendor() {
   return (
     <div className="view-vendor-container">
       <h2 className="view-vendor-title">View Vendor</h2>
-
-      
 
       {/* Vendor Dropdown */}
       <div className="dropdown-container">
